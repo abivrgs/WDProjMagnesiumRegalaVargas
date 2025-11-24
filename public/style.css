@@ -1,11 +1,14 @@
- nav{
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
+    nav {
         text-align: center;
         padding-bottom: 10px;
-        color: red;
         word-spacing: 50px;
-        
+    }
+    nav a{
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        font-weight: bold;
+        color: coral;
     }
     nav a:hover {
         color: darkblue;
@@ -24,7 +27,6 @@
     }
     footer {
         background-color: paleturquoise;
-
     }
     .flex{
         display:flex;
@@ -47,6 +49,15 @@
         transform: translate(-50%,-50%);
         color: coral;
     }
- 
-
+    table {
+        border: 1px solid;
+        border-color: black;
+        margin: 0 auto;
+        width: 750px;
+        height: 750px;
+    }
+    th, td {
+        border: 1px solid;
+        border-color: black;
+    }
    
