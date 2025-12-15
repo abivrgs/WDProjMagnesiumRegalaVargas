@@ -1,9 +1,7 @@
     
     @font-face {
       font-family: 'Genshin';
-      src: url('assets//zh-cn.ttf') format('truetype');
-      font-weight: normal;
-      font-size: normal;
+      src: url('../assets/zh-cn.ttf') format('truetype');
     }
 
     nav {
