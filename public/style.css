@@ -4,30 +4,14 @@
       src: url('../assets/zh-cn.ttf') format('truetype');
     }
 
-    nav {
-        text-align: center;
-        padding-bottom: 10px;
-        word-spacing: 50px;
-    }
-    nav a{
-        font-size: 20px;
-        text-decoration: none;
-        font-weight: bold;
-        color: coral;
-    }
-    nav a:hover {
-        color: darkblue;
-    }
-    nav a:active {
-        color: purple;
-    }
-    
-    body{
-        background-color: lightblue;
-              font-family: 'Genshin';
+ body{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(163, 181, 240);
     }
     h1 {
         font-size: 50px;
+        font-family: 'Genshin';
         text-align: center;
     }
     footer {
@@ -39,20 +23,58 @@
 
     }
     .div1 {
-        position: relative;
+      position: relative;
+      height: 70vh;
+      min-height: 520px;
+      overflow: hidden;
 
     }
     .homepage {
-        width:100%;
-        height: 100%;
-        object-fit: fill;
+      display: block;
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    nav{
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        padding: 3vh 1vh;
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        backdrop-filter: blur(3px); 
+        background: rgba(109, 99, 189, 0.13); 
+        z-index: 10; 
+    }
+
+    .logo{
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+      z-index: 4;
+    }
+    nav a{
+        position: relative;
+        font-family: 'Genshin';
+        z-index: 4;
+        margin: 0 12px;
     }
     .text {
         position: absolute;
         top: 20%;
         left: 50%;
         transform: translate(-50%,-50%);
-        color: coral;
+        color: rgb(228, 213, 123);
     }
     .map {
         width:100%;
