@@ -50,7 +50,7 @@
         justify-content: center;
         align-items: center; 
         backdrop-filter: blur(3px); 
-        background: rgba(109, 99, 189, 0.13); 
+        background: rgba(30, 0, 255, 0.13); 
         z-index: 10; 
     }
 
@@ -68,13 +68,17 @@
         font-family: 'Genshin';
         z-index: 4;
         margin: 0 12px;
+        color: rgb(151, 123, 228);
+
     }
     .text {
         position: absolute;
         top: 20%;
         left: 50%;
         transform: translate(-50%,-50%);
-        color: rgb(228, 213, 123);
+        color: rgb(26, 5, 82);
+        text-shadow: 0 0 20px;
+    
     }
     .map {
         width:100%;
