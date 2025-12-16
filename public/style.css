@@ -4,18 +4,31 @@
       src: url('../assets/zh-cn.ttf') format('truetype');
     }
 
+    * {
+      font-family: 'Genshin';
+    }
+
  body{
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background-color: rgba(25, 37, 86, 0.936);
     }
+
     h1 {
         font-size: 50px;
         font-family: 'Genshin';
         text-align: center;
     }
     footer {
-        background-color: paleturquoise;
+        background-color: rgb(43, 63, 91);
+        padding: 0.8rem 0;
+        text-align: center;
+        width: 100%;
+        margin-top: auto;
+        box-shadow: 0 -6px 18px rgba(0,0,0,0.25);
     }
     .flex{
         display:flex;
@@ -25,7 +38,7 @@
     .div1 {
       position: relative;
       height: 70vh;
-      min-height: 520px;
+      min-height: 800px;
       overflow: hidden;
 
     }
@@ -151,6 +164,28 @@
       line-height: 1.65;
       padding: 0 2rem;
     }
+    .lore-heading {
+      text-align: center;
+      margin: 4rem auto 1.5rem auto;
+      font-family: 'Genshin';
+      font-size: clamp(26px, 4vw, 48px);
+      background: linear-gradient(180deg, #0f0f42 0%, #7983f4 60%, #f2fafc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      animation: glow 8s infinite ease-in-out;
+      filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.662));
+}
+
+  .lore-text {
+      max-width: 1350px;
+      margin: 1.5rem auto;
+      font-size: 1.2rem;
+      line-height: 1.65;
+      padding: 0 2rem;
+}
     .map {
         width:100%;
         height: 100%;
@@ -172,6 +207,10 @@
         border: 1px solid;
         border-color: black;
     }
+    .archons{
+      margin-top: 100px;
+
+    }
       .regions {
         position: fixed;
         top: 0;
@@ -186,13 +225,76 @@
       .regions:target {
         display: block;
       }
+      .img{
+        margin-right: 20px;
+      }
+      .img2{
+        float:right;
+        
+        margin-left: 20px;
+      }
 
 
-      .regionsc {
-        position: relative;
-        background: white;
-        width: 80%;
-        height: 80%;
+      .mon {
+                position: relative;
+        background: aqua;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .liy {
+                position: relative;
+        background: gold;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .ina{
+                position: relative;
+        background: violet;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .sum {
+                position: relative;
+        background: greenyellow;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .fon{
+                position: relative;
+        background: skyblue;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .nat{
+                position: relative;
+        background: orangered;
+        width: auto;
+        height: auto;
         padding: 20px;
         border-radius: 10px;
         margin: 100px auto;
