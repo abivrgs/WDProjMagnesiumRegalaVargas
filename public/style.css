@@ -209,8 +209,126 @@
     }
     .archons{
       margin-top: 100px;
-
     }
+
+      .elements-page {
+        padding-top: 140px;
+        padding-bottom: 80px;
+      }
+
+      .elements-title {
+        font-family: 'Genshin';
+        text-align: center;
+        font-size: 52px;
+        margin-bottom: 60px;
+        background: linear-gradient(180deg, #0f0f42 0%, #7983f4 60%, #f2fafc 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+        z-index: 6;
+        animation: shiny 8s infinite ease-in-out;
+        transition: color 120ms ease, text-shadow 120ms ease, transform 120ms ease;
+        filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.662));
+      }
+
+  @keyframes shiny {
+        0%, 100% {
+          text-shadow:
+            0 0 4px rgba(126, 180, 255, 0.42),
+            0 0 12px rgba(34, 71, 131, 0.363);
+        }
+        50% {
+          text-shadow:
+            0 0 1px rgba(157, 148, 243, 0.329),
+            0 0 40px rgba(44, 49, 140, 0.637);
+          filter: drop-shadow(0 0 8px rgba(28, 56, 197, 0.443));
+        }
+      }
+
+      .elements-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 45px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .element-card {
+        position: relative;
+        height: 220px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #ffffff;
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .element-image {
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .element-image.normal {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .element-image.zoom {
+        opacity: 0;
+        transform: scale(1.25);
+      }
+
+      .element-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -100%;
+        background: rgba(168, 189, 244, 0.95);
+        padding: 22px;
+        opacity: 0;
+        transition: bottom 0.4s ease, opacity 0.4s ease;
+      }
+
+      .element-card:hover {
+        transform: translateY(-18px) scale(1.05);
+        box-shadow: 0 30px 70px rgba(255, 214, 11, 0.35);
+        z-index: 10;
+      }
+
+      .element-card:hover .element-image.normal {
+        opacity: 0;
+      }
+
+      .element-card:hover .element-image.zoom {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .element-card:hover .element-content {
+        bottom: 0;
+        opacity: 1;
+      }
+
+      .element-content h3 {
+        font-family: 'Genshin';
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .element-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .center-card {
+      grid-column: 2 / 3;
+      }
+
       .regions {
         position: fixed;
         top: 0;
