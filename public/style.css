@@ -209,8 +209,131 @@
     }
     .archons{
       margin-top: 100px;
-
     }
+
+      .elements-page {
+        padding-top: 140px;
+        padding-bottom: 80px;
+      }
+
+      .elements-title {
+        font-family: 'Genshin';
+        text-align: center;
+        font-size: 52px;
+        margin-bottom: 60px;
+        background: linear-gradient(180deg, #0f0f42 0%, #7983f4 60%, #f2fafc 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+        z-index: 6;
+        animation: shiny 8s infinite ease-in-out;
+        transition: color 120ms ease, text-shadow 120ms ease, transform 120ms ease;
+        filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.662));
+      }
+
+  @keyframes shiny {
+        0%, 100% {
+          text-shadow:
+            0 0 4px rgba(126, 180, 255, 0.42),
+            0 0 12px rgba(34, 71, 131, 0.363);
+        }
+        50% {
+          text-shadow:
+            0 0 1px rgba(157, 148, 243, 0.329),
+            0 0 40px rgba(44, 49, 140, 0.637);
+          filter: drop-shadow(0 0 8px rgba(28, 56, 197, 0.443));
+        }
+      }
+
+      .elements-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 45px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .element-card {
+        position: relative;
+        height: 220px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .element-toggle {
+        display: none;
+      }
+
+      .element-image {
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .element-image.normal {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .element-image.zoom {
+        opacity: 0;
+        transform: scale(1.25);
+      }
+
+      .element-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -100%;
+        background: rgba(168, 190, 244, 0.758);
+        padding: 22px;
+        opacity: 0;
+        transition: bottom 0.4s ease, opacity 0.4s ease;
+      }
+
+      .element-toggle:checked + .element-card {
+        transform: translateY(-18px) scale(1.05);
+        box-shadow: 0 30px 70px rgba(255, 214, 11, 0.35);
+        z-index: 10;
+      }
+
+      .element-toggle:checked + .element-card .element-image.normal {
+        opacity: 0;
+      }
+
+      .element-toggle:checked + .element-card .element-image.zoom {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .element-toggle:checked + .element-card .element-content {
+        bottom: 0;
+        opacity: 1;
+      }
+
+      .element-content h3 {
+        font-family: 'Genshin';
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .element-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .center-card {
+        grid-column: 2 / 3;
+      }
+
+
       .regions {
         position: fixed;
         top: 0;
@@ -237,7 +360,7 @@
 
       .mon {
                 position: relative;
-        background: aqua;
+        background: rgba(93, 255, 198, 0.781);
         width: auto;
         height: auto;
         padding: 20px;
@@ -248,7 +371,7 @@
 
       .liy {
                 position: relative;
-        background: gold;
+        background: rgba(255, 217, 0, 0.687);
         width: auto;
         height: auto;
         padding: 20px;
@@ -259,7 +382,7 @@
 
       .ina{
                 position: relative;
-        background: violet;
+        background: rgba(208, 106, 223, 0.763);
         width: auto;
         height: auto;
         padding: 20px;
@@ -270,7 +393,7 @@
 
       .sum {
                 position: relative;
-        background: greenyellow;
+        background: rgba(120, 212, 81, 0.783);
         width: auto;
         height: auto;
         padding: 20px;
@@ -281,7 +404,7 @@
 
       .fon{
                 position: relative;
-        background: skyblue;
+        background: rgba(123, 161, 244, 0.776);
         width: auto;
         height: auto;
         padding: 20px;
@@ -292,7 +415,7 @@
 
       .nat{
                 position: relative;
-        background: orangered;
+        background: rgba(255, 72, 0, 0.801);
         width: auto;
         height: auto;
         padding: 20px;
@@ -300,8 +423,6 @@
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
       }
-
-
 
       .close {
         position: absolute;
@@ -322,6 +443,7 @@
         color: lightgreen;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
       .open2 {
         position: absolute;
@@ -332,6 +454,7 @@
         color: gold;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
 
       .open3 {
@@ -343,6 +466,7 @@
         color: purple;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
 
       .open4 {
@@ -354,6 +478,7 @@
         color: green;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
 
       .open5 {
@@ -365,6 +490,7 @@
         color: blue;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
 
       .open6 {
@@ -376,6 +502,7 @@
         color: orangered;
         text-decoration: none;
         border-radius: 5px;
+        overflow-y: auto;
       }
 
 
