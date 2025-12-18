@@ -79,7 +79,7 @@
     nav a{
       position: relative;
       font-family: 'Genshin';
-      color: rgb(74, 28, 138);
+      color: rgb(162, 58, 186);
       z-index: 4;
       margin: 0 90px;
       text-shadow:
@@ -255,6 +255,10 @@
         padding: 0 40px;
       }
 
+      .element-toggle {
+        display: none;
+      }
+
       .element-card {
         position: relative;
         height: 220px;
@@ -262,10 +266,7 @@
         overflow: hidden;
         background: #ffffff;
         cursor: pointer;
-      }
-
-      .element-toggle {
-        display: none;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
 
       .element-image {
@@ -274,48 +275,59 @@
         border-radius: 20px;
         background-size: cover;
         background-position: center;
-        transition: opacity 0.4s ease, transform 0.4s ease;
-      }
-
-      .element-image.normal {
-        opacity: 1;
-        transform: scale(1);
       }
 
       .element-image.zoom {
-        opacity: 0;
-        transform: scale(1.25);
+        display: none;
       }
 
       .element-content {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -100%;
-        background: rgba(168, 190, 244, 0.758);
-        padding: 22px;
+        bottom: -50%;
+        background: rgba(168, 190, 244, 0.797);
+        padding: 9px;
         opacity: 0;
         transition: bottom 0.4s ease, opacity 0.4s ease;
       }
 
       .element-toggle:checked + .element-card {
         transform: translateY(-18px) scale(1.05);
-        box-shadow: 0 30px 70px rgba(255, 214, 11, 0.35);
         z-index: 10;
-      }
-
-      .element-toggle:checked + .element-card .element-image.normal {
-        opacity: 0;
-      }
-
-      .element-toggle:checked + .element-card .element-image.zoom {
-        opacity: 1;
-        transform: scale(1);
       }
 
       .element-toggle:checked + .element-card .element-content {
         bottom: 0;
         opacity: 1;
+      }
+
+      #pyro:checked + .element-card {
+        box-shadow: 0 0 40px rgba(250, 88, 44, 0.8);
+      }
+
+      #cryo:checked + .element-card {
+        box-shadow: 0 0 40px rgba(160, 220, 255, 0.8);
+      }
+
+      #electro:checked + .element-card {
+        box-shadow: 0 0 40px rgba(175, 68, 252, 0.8);
+      }
+
+      #hydro:checked + .element-card {
+        box-shadow: 0 0 40px rgba(80, 170, 255, 0.8);
+      }
+
+      #anemo:checked + .element-card {
+        box-shadow: 0 0 40px rgba(120, 255, 200, 0.8);
+      }
+
+      #geo:checked + .element-card {
+        box-shadow: 0 0 40px rgba(255, 200, 120, 0.8);
+      }
+
+      #dendro:checked + .element-card {
+        box-shadow: 0 0 40px rgba(120, 255, 120, 0.8);
       }
 
       .element-content h3 {
@@ -334,6 +346,7 @@
       }
 
 
+
       .regions {
         position: fixed;
         top: 0;
@@ -348,6 +361,79 @@
       .regions:target {
         display: block;
       }
+
+      .archons {
+          margin-top: 100px;
+          width: 95%;
+          max-width: 1400px;
+          border-collapse: collapse;
+          table-layout: auto;
+      }
+
+      .archons-header {
+          text-align: center;
+          margin: 80px 0 40px 0;
+      }
+
+      .archons-header h1 {
+          font-family: 'Genshin';
+          font-size: clamp(36px, 6vw, 72px);
+          font-weight: 800;
+          background: linear-gradient(180deg, #0f0f42 0%, #7983f4 60%, #f2fafc 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          -webkit-text-fill-color: transparent;
+          animation: glow 8s infinite ease-in-out;
+          filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.662));
+          margin-bottom: 20px;
+      }
+
+      .archons-description {
+          font-family: 'Genshin';
+          max-width: 900px;
+          margin: 0 auto;
+          font-size: 1.2rem;
+          line-height: 1.65;
+          color: #f2fafc;
+          text-shadow: 0 0 5px rgba(126, 180, 255, 0.5);
+      }
+
+
+      .archons th, .archons td {
+          border: 1px solid black;
+          padding: 15px;
+          vertical-align: top;
+      }
+
+      .archon-info {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+      }
+
+      .archon-info img {
+          border-radius: 10px;
+          height: 180px;
+          width: 320px;
+          object-fit: cover;
+      }
+
+      .archon-info div {
+          max-width: 700px;
+          line-height: 1.5;
+      }
+
+      .anemo { box-shadow: 0 0 25px #6ab7ff; }
+      .geo { box-shadow: 0 0 25px #d4af37; }
+      .electro { box-shadow: 0 0 25px #a020f0; }
+      .dendro { box-shadow: 0 0 25px #32cd32; }
+      .hydro { box-shadow: 0 0 25px #1e90ff; }
+      .pyro { box-shadow: 0 0 25px #ff4500; }
+      .cryo { box-shadow: 0 0 25px #00ffff; }
+
+
+
       .img{
         margin-right: 20px;
       }
@@ -357,9 +443,8 @@
         margin-left: 20px;
       }
 
-
       .mon {
-                position: relative;
+        position: fixed;
         background: rgba(93, 255, 198, 0.781);
         width: auto;
         height: auto;
@@ -367,10 +452,12 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .liy {
-                position: relative;
+        position: fixed;
         background: rgba(255, 217, 0, 0.687);
         width: auto;
         height: auto;
@@ -378,10 +465,12 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .ina{
-                position: relative;
+        position: fixed;
         background: rgba(208, 106, 223, 0.763);
         width: auto;
         height: auto;
@@ -389,10 +478,12 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .sum {
-                position: relative;
+                position: fixed;
         background: rgba(120, 212, 81, 0.783);
         width: auto;
         height: auto;
@@ -403,7 +494,7 @@
       }
 
       .fon{
-                position: relative;
+                position: fixed;
         background: rgba(123, 161, 244, 0.776);
         width: auto;
         height: auto;
@@ -411,10 +502,12 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .nat{
-                position: relative;
+                position: fixed;
         background: rgba(255, 72, 0, 0.801);
         width: auto;
         height: auto;
@@ -422,6 +515,8 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .close {
@@ -511,4 +606,187 @@
         to   { opacity: 1; transform: scale(1); }
       }
 
-        
+      .fourshades-section {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+      .fourshades-title {
+          font-family: 'Genshin';
+          font-size: clamp(36px, 6vw, 72px);
+          font-weight: 800;
+          background: linear-gradient(180deg, #fbe26f, #ffd700, #fffacd); /* golden glow */
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          filter: drop-shadow(0 0 15px rgba(255, 255, 200, 0.9));
+          margin-bottom: 1rem;
+      }
+
+      .fourshades-desc {
+          font-family: 'Genshin';
+          font-size: 1.2rem;
+          line-height: 1.6;
+          max-width: 900px;
+          margin: 0 auto 2rem auto;
+      }
+
+      .fourshades-banner-container {
+          margin-bottom: 2rem;
+      }
+
+      .fourshades-banner {
+          width: 80%;
+          max-width: 1000px;
+          border-radius: 15px;
+          filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7));
+      }
+
+      .ronova {
+          font-family: 'Genshin';
+          font-size: 32px;
+          font-weight: 800;
+          background: linear-gradient(135deg, #000000, #571313, #FF0000);
+          -webkit-background-clip: text;
+          color: transparent;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+      }
+
+      .istaroth {
+          font-family: 'Genshin';
+          font-size: 32px;
+          font-weight: 800;
+          background: linear-gradient(135deg, #FFD700, #ffcf21, #FFFFFF);
+          -webkit-background-clip: text;
+          color: transparent;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+      }
+
+      .naberius {
+          font-family: 'Genshin';
+          font-size: 32px;
+          font-weight: 800;
+          background: linear-gradient(135deg, #FFD700, #87CEEB, #FFFFFF, #ADD8E6);
+          -webkit-background-clip: text;
+          color: transparent;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+      }
+
+      .asmoday {
+          font-family: 'Genshin';
+          font-size: 32px;
+          font-weight: 800;
+          background: linear-gradient(135deg, #000000, #e76413, #ffffff);
+          -webkit-background-clip: text;
+          color: transparent;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+      }
+
+      footer.footer {
+        background-color: #181a2a;
+        color: #eee;
+        text-align: center;
+        padding: 40px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .social-link {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #111224;
+        box-shadow: 0 0 6px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-link img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .social-link:hover {
+        transform: translateY(-6px) scale(1.15);
+        box-shadow:
+          0 0 12px rgba(255, 255, 255, 0.9),
+          0 0 20px rgba(255, 255, 255, 0.7);
+      }
+
+      .social-link:hover img {
+        filter: brightness(1) invert(0.95) drop-shadow(0 0 3px #fff);
+      }
+
+      .footer-text {
+        font-size: 1rem;
+        margin: 8px 0;
+        color: #ccc;
+      }
+
+      .footer-text.copyright {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #999;
+      }
+
+      .footer-text.genshin-link a {
+        color: #66a3ff;
+        position: relative;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .footer-text.genshin-link a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background: #66a3ff;
+        transition: width 0.4s ease;
+        transform-origin: right;
+      }
+
+      .footer-text.genshin-link a:hover {
+        color: #a3c1ff;
+      }
+
+      .footer-text.genshin-link a:hover::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+
+                      
