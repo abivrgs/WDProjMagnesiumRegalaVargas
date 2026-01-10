@@ -46,25 +46,41 @@
 - Theories and interpretations from the lore community
 - Visuals such as images, symbols, and more will be used
 
-### Description of how JS will be incorporated:
-### JavaScript will be used to create an interactive login feature that appears on every page of the website. In the top-right corner of each page, there will be a “Log In” button. When a user clicks this button, a small pop-up or modal window will appear, allowing them to enter their username and password. Once the user submits their information, JavaScript will check the input (for example, ensuring that both fields are filled in). If the user successfully logs in, the JavaScript code will update the website’s interface to replace the “Log In” button with the user’s profile picture or avatar.
+### VI. Page 6. - Playstyle
+#### This page talks about the playstyle of the game, how the controls works—generally just making the players be more familiar about how the game works. This page provides:
+- A GIF showing an example of one of the playstyle (ex. the character gliding down)
+- Descriptions of the playstyle
+- The implementation of the HTML form
+- the HTML will disappear after the user chooses, but when the user comes back to this page from another page, the question will reappear again just in case the user chooses another option.
+
+### VII. Page 7 - Tips
+#### This page provides gameplay tips for the user to help them get better at the game. This page provides:
+- An image that came from the game
+- Content/Descriptions on how to get better, the content also depends wether the user picks beginner or advanced from the HTML form from the previous page
+
+### VII. Page 8 - More Websites
+#### This page shows more websites to help the user improve more on the game. This page provides:
+- Descriptions of what the websites includes and how it would help them
+- Buttons that would redirect the users to the website
+- The content depends on wether the user picks beginner or advanced from the Playstyle Page
+- The amount of content displayed depends on the choice of the user, this is just an example
+
+### Purpose and Use of the HTML Form:
+### The form will ask the question "Are you a beginner or an advanced player?” and allow users to select between two options: Beginner or Advanced using buttons. The purpose of this form is to personalize the website’s content based on the user’s familiarity with the game. By identifying whether the user is a beginner or an advanced player, the website can display information that is more appropriate and relevant to the user’s level of experience. This prevents users from being overwhelmed with content that may not match their skill level.
 #### This feature will make use of JavaScript to:
-- Handle input and output (user credentials and interface updates)
-- Manage user state (logged in or logged out)
-- Dynamically change the content displayed on the webpage without reloading the page
+- JavaScript will be used to handle the form submission, store the user’s selected experience level, and retrieve the saved data on other webpages
+- On other webpages of the website, JavaScript will retrieve the stored experience level and use conditional statements to determine what content should be displayed. For example, beginner users will see simplified explanations and basic gameplay information, while advanced users will be shown more detailed and optimized content.
+- JavaScript will also be used to dynamically update page text and sections based on the stored data.
 ******
 ### Wireframes:
 #### Page 1 (Home page):
 #### ![Home page](images/page1.png)
 
-#### Page 1 Expanded (Home page):
-#### ![Home page expanded](images/page1expanded.png)
-
 #### Page 2 (Elements page):
 #### ![Elements page](images/page2.png)
 
 #### Page 2 Expanded (Elements page):
-#### ![Elements page expanded](images/page2expanded.png)
+#### ![Elements page expanded](images/page2e.png)
 
 #### Page 3 (Archons page)
 #### ![Archons page](images/page3.png)
@@ -73,7 +89,16 @@
 #### ![Regions page](images/page4.png)
 
 #### Page 4 Expanded (Regions)
-#### ![Regions page expanded](images/page4expanded.png)
+#### ![Regions page expanded](images/page4e.png)
 
 #### Page 5 (The Four Shades page)
 #### ![Four shades page](images/page5.png)
+
+#### Page 6 (Playstyle)
+#### ![Playstyle page](images/page6.png)
+
+#### Page 7 (Gameplay Tips)
+#### ![Gameplay Tips page](images/page7.png)
+
+#### Page 8 (More Websites)
+#### ![More websites to helppage](images/page8.png)
