@@ -47,30 +47,31 @@
 - Visuals such as images, symbols, and more will be used
 
 ### VI. Page 6. - Playstyle
-#### This page talks about the playstyle of the game, how the controls works—generally just making the players be more familiar about how the game works. This page provides:
-- A GIF showing an example of one of the playstyle (ex. the character gliding down)
-- Descriptions of the playstyle
+#### This page talks about the playstyle of the game, while also asking some information (from the game) from the user. This page provides:
+- An HTML form that asks about some info from the user like what is there traveler's name, their AR level, favorite region, and etc.
+- A submit and reset button for when the user submits the info they added to the website or restart everything they chose/typed
 - The implementation of the HTML form
-- the HTML will disappear after the user chooses, but when the user comes back to this page from another page, the question will reappear again just in case the user chooses another option.
+- More information and description about the game—about its playstyle specifically
 
 ### VII. Page 7 - Tips
 #### This page provides gameplay tips for the user to help them get better at the game. This page provides:
-- An image that came from the game
-- Content/Descriptions on how to get better, the content also depends wether the user picks beginner or advanced from the HTML form from the previous page
+- A moving image (or a GIF) that came from the game
+- Content/Descriptions/Tips on how to get better, the content also depends from the data collected from the user
+- for example, if the user chose 'Raiden Shogun' as the archon they like the most, this page would provide more descriptions about her and some websites to help the user to understand the lore more
 
-### VII. Page 8 - More Websites
-#### This page shows more websites to help the user improve more on the game. This page provides:
-- Descriptions of what the websites includes and how it would help them
-- Buttons that would redirect the users to the website
-- The content depends on wether the user picks beginner or advanced from the Playstyle Page
-- The amount of content displayed depends on the choice of the user, this is just an example
+### VII. Page 8 - Traveler's Card
+#### This page shows a themed card/profile of the user/traveler from the data collected from page 6. This isn't that improtant, it really just adds more design and pop to our website while also showing the user's cool and diverse theme from their choices. This page provides:
+- A themed background and images depending on the user's favorite region, prefered element and archon.
+- A textlink where the user will be redirected to Genshin's official website where news and announcements are uploaded there
+- a floating/spinning image or gif of the element that the user has picked
 
 ### Purpose and Use of the HTML Form:
-### The form will ask the question "Are you a beginner or an advanced player?” and allow users to select between two options: Beginner or Advanced using buttons. The purpose of this form is to personalize the website’s content based on the user’s familiarity with the game. By identifying whether the user is a beginner or an advanced player, the website can display information that is more appropriate and relevant to the user’s level of experience. This prevents users from being overwhelmed with content that may not match their skill level.
+### The HTML form is designed to collect user information for the Teyvat Explorer Profile section of our Genshin Impact–themed website. Its main purpose is to allow users to create a personalized explorer profile based on their preferences in the game, such as their favorite region, element, and archon. The form is used as an interactive input for the website where users provide their details. Once submitted, the information is saved on the user’s computer and reused on other webpages of the website to display customized content. This makes the website more engaging and personalized, as users can see information that reflects their own choices and interests.
 #### This feature will make use of JavaScript to:
-- JavaScript will be used to handle the form submission, store the user’s selected experience level, and retrieve the saved data on other webpages
-- On other webpages of the website, JavaScript will retrieve the stored experience level and use conditional statements to determine what content should be displayed. For example, beginner users will see simplified explanations and basic gameplay information, while advanced users will be shown more detailed and optimized content.
-- JavaScript will also be used to dynamically update page text and sections based on the stored data.
+- Handle user input and events (e.g., clicks, form submissions)
+- Validate user's inputs before processing
+- On other webpages of the website, JavaScript will retrieve the stored user data and use conditional statements to determine what content should be displayed
+- JavaScript will also be used to dynamically update page text and sections based on the stored data
 ******
 ### Wireframes:
 #### Page 1 (Home page):
@@ -97,8 +98,11 @@
 #### Page 6 (Playstyle)
 #### ![Playstyle page](images/page6.png)
 
+#### Page 6 Expanded (Playstyle)
+#### ![Playstyle page](images/page6e.png)
+
 #### Page 7 (Gameplay Tips)
 #### ![Gameplay Tips page](images/page7.png)
 
-#### Page 8 (More Websites)
+#### Page 8 (Traveler's Card)
 #### ![More websites to helppage](images/page8.png)
