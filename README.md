@@ -46,25 +46,42 @@
 - Theories and interpretations from the lore community
 - Visuals such as images, symbols, and more will be used
 
-### Description of how JS will be incorporated:
-### JavaScript will be used to create an interactive login feature that appears on every page of the website. In the top-right corner of each page, there will be a “Log In” button. When a user clicks this button, a small pop-up or modal window will appear, allowing them to enter their username and password. Once the user submits their information, JavaScript will check the input (for example, ensuring that both fields are filled in). If the user successfully logs in, the JavaScript code will update the website’s interface to replace the “Log In” button with the user’s profile picture or avatar.
+### VI. Page 6. - Playstyle
+#### This page talks about the playstyle of the game, while also asking some information (from the game) from the user. This page provides:
+- An HTML form that asks about some info from the user like what is there traveler's name, their AR level, favorite region, and etc.
+- A submit and reset button for when the user submits the info they added to the website or restart everything they chose/typed
+- The implementation of the HTML form
+- More information and description about the game—about its playstyle specifically
+
+### VII. Page 7 - Tips
+#### This page provides gameplay tips for the user to help them get better at the game. This page provides:
+- A moving image (or a GIF) that came from the game
+- Content/Descriptions/Tips on how to get better, the content also depends from the data collected from the user
+- for example, if the user chose 'Raiden Shogun' as the archon they like the most, this page would provide more descriptions about her and some websites to help the user to understand the lore more
+
+### VII. Page 8 - Traveler's Card
+#### This page shows a themed card/profile of the user/traveler from the data collected from page 6. This isn't that improtant, it really just adds more design and pop to our website while also showing the user's cool and diverse theme from their choices. This page provides:
+- A themed background and images depending on the user's favorite region, prefered element and archon.
+- A textlink where the user will be redirected to Genshin's official website where news and announcements are uploaded there
+- a floating/spinning image or gif of the element that the user has picked
+
+### Purpose and Use of the HTML Form:
+### The HTML form is designed to collect user information for the Teyvat Explorer Profile section of our Genshin Impact–themed website. Its main purpose is to allow users to create a personalized explorer profile based on their preferences in the game, such as their favorite region, element, and archon. The form is used as an interactive input for the website where users provide their details. Once submitted, the information is saved on the user’s computer and reused on other webpages of the website to display customized content. This makes the website more engaging and personalized, as users can see information that reflects their own choices and interests.
 #### This feature will make use of JavaScript to:
-- Handle input and output (user credentials and interface updates)
-- Manage user state (logged in or logged out)
-- Dynamically change the content displayed on the webpage without reloading the page
+- Handle user input and events (e.g., clicks, form submissions)
+- Validate user's inputs before processing
+- On other webpages of the website, JavaScript will retrieve the stored user data and use conditional statements to determine what content should be displayed
+- JavaScript will also be used to dynamically update page text and sections based on the stored data
 ******
 ### Wireframes:
 #### Page 1 (Home page):
 #### ![Home page](images/page1.png)
 
-#### Page 1 Expanded (Home page):
-#### ![Home page expanded](images/page1expanded.png)
-
 #### Page 2 (Elements page):
 #### ![Elements page](images/page2.png)
 
 #### Page 2 Expanded (Elements page):
-#### ![Elements page expanded](images/page2expanded.png)
+#### ![Elements page expanded](images/page2e.png)
 
 #### Page 3 (Archons page)
 #### ![Archons page](images/page3.png)
@@ -73,7 +90,19 @@
 #### ![Regions page](images/page4.png)
 
 #### Page 4 Expanded (Regions)
-#### ![Regions page expanded](images/page4expanded.png)
+#### ![Regions page expanded](images/page4e.png)
 
 #### Page 5 (The Four Shades page)
 #### ![Four shades page](images/page5.png)
+
+#### Page 6 (Playstyle)
+#### ![Playstyle page](images/page6.png)
+
+#### Page 6 Expanded (Playstyle)
+#### ![Playstyle page](images/page6e.png)
+
+#### Page 7 (Gameplay Tips)
+#### ![Gameplay Tips page](images/page7.png)
+
+#### Page 8 (Traveler's Card)
+#### ![More websites to helppage](images/page8.png)
