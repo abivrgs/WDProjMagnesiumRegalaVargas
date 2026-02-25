@@ -359,7 +359,7 @@
 
 
       .mon {
-                position: relative;
+                position: fixed;
         background: rgba(93, 255, 198, 0.781);
         width: auto;
         height: auto;
@@ -367,6 +367,8 @@
         border-radius: 10px;
         margin: 100px auto;
         animation: fadeIn 0.3s ease-in-out;
+        inset:0;
+        overflow-y: auto;
       }
 
       .liy {
@@ -443,7 +445,6 @@
         color: lightgreen;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
       .open2 {
         position: absolute;
@@ -454,7 +455,6 @@
         color: gold;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
 
       .open3 {
@@ -466,7 +466,6 @@
         color: purple;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
 
       .open4 {
@@ -478,7 +477,6 @@
         color: green;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
 
       .open5 {
@@ -490,7 +488,6 @@
         color: blue;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
 
       .open6 {
@@ -502,7 +499,6 @@
         color: orangered;
         text-decoration: none;
         border-radius: 5px;
-        overflow-y: auto;
       }
 
 
