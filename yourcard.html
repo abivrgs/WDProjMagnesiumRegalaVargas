@@ -14,3 +14,22 @@
   <a href="playstyle.html">Playstyle</a>
   <a href="tips.html">Tips</a>
 </nav>
+
+<body>
+  <div class="your-card">
+    <div class="card">
+    <h1 id="travelerName"></h1>
+    <h2>
+    <a href="https://genshin.hoyoverse.com/en/news" target="_blank" class="news"> Stay updated on Genshin's news/announcements!</a>
+    </h2>
+    </div>
+
+  </div>
+</body>
+
+<script>
+const travelerName = localStorage.getItem("travelerName");
+
+  document.getElementById("travelerName").textContent =
+    travelerName ? `Welcome back, ${travelerName}!`: travelerName;
+</script>
