@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="public/style.css">
 </head>
+
+<body>
 
 <nav>
   <img src="assets/logo.png" class="logo" alt="site logo">
@@ -14,3 +16,121 @@
   <a href="playstyle.html">Playstyle</a>
   <a href="yourcard.html">Your Card</a>
 </nav>
+
+<section class="tips-section">
+
+  <h1 class="tips-title">Tips!</h1>
+
+  <div class="tips-banner">
+    <img id="archonGif" src="" alt="Archon GIF">
+  </div>
+
+  <div class="archon-mini-info">
+    <h2 id="archonName"></h2>
+    <p id="archonDescription"></p>
+  </div>
+
+  <div class="tips-grid">
+
+    <div class="tips-card">
+      <p>
+        Explore different regions of Teyvat to unlock materials,
+        world quests, hidden chests, and regional specialties.
+      </p>
+      <a href="https://genshin-impact.fandom.com/wiki/Regions"
+         target="_blank"
+         class="tips-button">
+         Regions / Places to Explore
+      </a>
+    </div>
+
+    <div class="tips-card">
+      <p>
+        Understand lores to help you appreciate characters,
+        archons, and the history of each nation in Teyvat.
+      </p>
+      <a href="https://genshin-impact.fandom.com/wiki/Lore"
+         target="_blank"
+         class="tips-button">
+         Some Lores to Read
+      </a>
+    </div>
+
+    <div class="tips-card">
+      <p>
+        Improve your gameplay by learning elemental reactions,
+        team synergy, artifact builds, and weapon optimization.
+      </p>
+      <a href="https://keqingmains.com/"
+         target="_blank"
+         class="tips-button">
+         Others
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+const selectedArchon = localStorage.getItem("selectedArchon");
+const travelerName = localStorage.getItem("travelerName");
+
+const archonData = {
+
+  "Venti": {
+    gif: "assets/venti.gif",
+    description: "The carefree Anemo Archon of Mondstadt. Known for powerful crowd control and swirl reactions."
+  },
+
+  "Zhongli": {
+    gif: "assets/zhongli.gif",
+    description: "The Geo Archon of Liyue. Master of shields and defensive playstyles."
+  },
+
+  "Raiden Shogun": {
+    gif: "assets/raiden.gif",
+    description: "The Electro Archon of Inazuma. Excels in burst damage and energy regeneration."
+  },
+
+  "Nahida": {
+    gif: "assets/nahida.gif",
+    description: "The Dendro Archon of Sumeru. Focuses on elemental mastery and Dendro reactions."
+  },
+
+  "Furina": {
+    gif: "assets/furina.gif",
+    description: "The Hydro Archon of Fontaine. Balances damage and team-wide buffs."
+  },
+
+  "Mavuika": {
+    gif: "assets/mavuika.gif",
+    description: "The Pyro Archon of Natlan. Represents passion, war, and blazing determination. Excels in aggressive and high-damage playstyles."
+  },
+
+  "Tsaritsa": {
+    gif: "assets/tsaritsa.gif",
+    description: "The Cryo Archon of Snezhnaya. A mysterious and powerful ruler who commands the Fatui and pursues a greater hidden plan."
+  }
+
+};
+
+if (archonData[selectedArchon]) {
+  document.getElementById("archonGif").src =
+    archonData[selectedArchon].gif;
+
+  document.getElementById("archonName").textContent =
+    travelerName ? `Tips for ${travelerName} - ${selectedArchon}` : selectedArchon;
+
+  document.getElementById("archonDescription").textContent =
+    archonData[selectedArchon].description;
+} else {
+  document.getElementById("archonName").textContent =
+    "No Archon Selected - Please submit your profile first!";
+  document.getElementById("archonDescription").textContent =
+    "Go back to the Playstyle page and submit your profile to see personalized tips.";
+}
+</script>
+
+</body>
+</html>

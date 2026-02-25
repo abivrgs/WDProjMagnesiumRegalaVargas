@@ -60,6 +60,8 @@
         <option>Raiden Shogun</option>
         <option>Nahida</option>
         <option>Furina</option>
+        <option>Mavuika</option>
+        <option>Tsaritsa</option>
       </select>
 
       <div class="playstyle-buttons">
@@ -121,25 +123,35 @@ const resultBox = document.getElementById("resultBox");
 form.addEventListener("submit", function(e){
   e.preventDefault();
 
-  const name = travelerName.value;
-  const ar = arLevel.value;
-  const region = region.value;
-  const element = element.value;
-  const archon = archon.value;
+  const name = document.getElementById("travelerName").value;
+  const ar = document.getElementById("arLevel").value;
+  const region = document.getElementById("region").value;
+  const element = document.getElementById("element").value;
+  const archonChoice = document.getElementById("archon").value;
+
+  localStorage.setItem("selectedArchon", archonChoice);
+  localStorage.setItem("travelerName", name);
+  localStorage.setItem("arLevel", ar);
+  localStorage.setItem("region", region);
+  localStorage.setItem("element", element);
 
   resultBox.style.display = "block";
+  resultBox.classList.add("submitted");
   resultBox.innerHTML = `
-    <h3>Your Profile</h3>
+    <h3>✓ Profile Submitted!</h3>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>AR Level:</strong> ${ar}</p>
     <p><strong>Region:</strong> ${region}</p>
     <p><strong>Element:</strong> ${element}</p>
-    <p><strong>Archon:</strong> ${archon}</p>
+    <p><strong>Archon:</strong> ${archonChoice}</p>
+    <br>
+    <a href="tips.html" class="submit-btn">Go to Tips Page</a>
   `;
 });
 
 form.addEventListener("reset", function(){
   resultBox.style.display = "none";
+  resultBox.classList.remove("submitted");
 });
 </script>
 
