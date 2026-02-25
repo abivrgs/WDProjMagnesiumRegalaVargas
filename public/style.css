@@ -81,7 +81,7 @@
       font-family: 'Genshin';
       color: rgb(162, 58, 186);
       z-index: 4;
-      margin: 0 90px;
+      margin: 0 65px;
       text-shadow:
         0 0 8px rgba(126, 180, 255, 1),
         0 0 18px rgba(68, 135, 243, 0.85),
@@ -345,8 +345,6 @@
         grid-column: 2 / 3;
       }
 
-
-
       .regions {
         position: fixed;
         top: 0;
@@ -356,7 +354,6 @@
         background: rgba(0,0,0,0.6);
         display: none;
       }
-
 
       .regions:target {
         display: block;
