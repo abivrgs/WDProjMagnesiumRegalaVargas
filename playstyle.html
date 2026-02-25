@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="public/style.css">
 </head>
+<body>
 
 <nav>
   <img src="assets/logo.png" class="logo" alt="site logo">
@@ -14,3 +15,157 @@
   <a href="tips.html">Tips</a>
   <a href="yourcard.html">Your Card</a>
 </nav>
+
+<section class="playstyle-section">
+
+  <h1 class="playstyle-title">"There's still a long road ahead."</h1>
+
+  <div class="playstyle-form-box">
+    <form id="playstyleForm">
+
+      <label>Traveler's Name</label>
+      <input type="text" id="travelerName" required>
+
+      <label>AR Level</label>
+      <input type="number" id="arLevel" min="1" max="60" required>
+
+      <label>Favorite Region</label>
+      <select id="region" required>
+        <option value="">Select Region</option>
+        <option>Mondstadt</option>
+        <option>Liyue</option>
+        <option>Inazuma</option>
+        <option>Sumeru</option>
+        <option>Fontaine</option>
+        <option>Natlan</option>
+      </select>
+
+      <label>Element You Resonate With</label>
+      <select id="element" required>
+        <option value="">Select Element</option>
+        <option>Anemo</option>
+        <option>Geo</option>
+        <option>Electro</option>
+        <option>Dendro</option>
+        <option>Hydro</option>
+        <option>Pyro</option>
+        <option>Cryo</option>
+      </select>
+
+      <label>Archon You Like The Most</label>
+      <select id="archon" required>
+        <option value="">Select Archon</option>
+        <option>Venti</option>
+        <option>Zhongli</option>
+        <option>Raiden Shogun</option>
+        <option>Nahida</option>
+        <option>Furina</option>
+      </select>
+
+      <div class="playstyle-buttons">
+        <button type="submit" class="submit-btn">Submit Profile</button>
+        <button type="reset" class="reset-btn">Reset All</button>
+      </div>
+
+    </form>
+
+    <div id="resultBox" class="result-box"></div>
+  </div>
+
+<div class="playstyle-info">
+  <h2 class="lore-heading">More About the Game (Playstyle)</h2>
+
+  <p class="lore-text">
+    Genshin Impact’s playstyle is built around elemental synergy, strategic team composition,
+    and dynamic character switching. Players control a party of four characters,
+    each aligned with one of the seven elements: Anemo, Geo, Electro, Dendro,
+    Hydro, Pyro, and Cryo. The true depth of combat comes from combining these
+    elements to trigger powerful elemental reactions such as Vaporize, Melt,
+    Overloaded, Hyperbloom, and many more.
+  </p>
+
+  <p class="lore-text">
+    Unlike traditional RPGs where you control one character at a time,
+    Genshin encourages fluid switching during battle. This allows players
+    to apply elements strategically, amplify damage output, control crowds,
+    shield allies, or provide healing support. Team-building becomes an
+    important part of gameplay, as certain characters and elements work
+    exceptionally well together depending on the situation.
+  </p>
+
+  <p class="lore-text">
+    Each region of Teyvat introduces unique environmental mechanics and
+    enemy types that influence combat strategies. For example, some regions
+    emphasize exploration and vertical movement, while others focus more on
+    reaction-based combat or defensive playstyles. This keeps gameplay
+    constantly evolving and encourages players to experiment with new
+    builds, artifacts, and weapon combinations.
+  </p>
+
+  <p class="lore-text">
+    Ultimately, a player’s preferred element, region, and Archon often reflect
+    their personal playstyle. Some players enjoy fast-paced, high-damage
+    aggression, while others prefer tactical positioning, shielding, or
+    sustained healing support. The flexibility of Genshin Impact allows every
+    player to shape their own combat identity and approach the world of
+    Teyvat in a way that feels uniquely their own.
+  </p>
+</div>
+
+</section>
+
+<script>
+const form = document.getElementById("playstyleForm");
+const resultBox = document.getElementById("resultBox");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = travelerName.value;
+  const ar = arLevel.value;
+  const region = region.value;
+  const element = element.value;
+  const archon = archon.value;
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <h3>Your Profile</h3>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>AR Level:</strong> ${ar}</p>
+    <p><strong>Region:</strong> ${region}</p>
+    <p><strong>Element:</strong> ${element}</p>
+    <p><strong>Archon:</strong> ${archon}</p>
+  `;
+});
+
+form.addEventListener("reset", function(){
+  resultBox.style.display = "none";
+});
+</script>
+
+</body>
+
+<footer class="footer">
+  <h2 class="footer-title">
+    Exploring Teyvat: A Guide to Genshin's Archons, Elements, Four shades, and Regions
+  </h2>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/1Aa8Hn7fas/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="social-link facebook">
+      <img src="assets/fb-removebg-preview.png" alt="Facebook Icon">
+    </a>
+    <a href="https://x.com/genshinimpact?s=21" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link x">
+      <img src="assets/x-removebg-preview.png" alt="X Icon">
+    </a>
+    <a href="https://www.instagram.com/genshinimpact?igsh=MXdraXJjY3g2cGFxdw==" target="_blank" rel="noopener" aria-label="Instagram" class="social-link instagram">
+      <img src="assets/ig-removebg-preview.png" alt="Instagram Icon">
+    </a>
+  </div>
+  <p class="footer-text genshin-link">
+    Visit the official Website <a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact website</a>
+  </p>
+  <p class="footer-text copyright">
+    © 2025 Enhypen Vargas A.B & Regala R.B. of 9-Magnesium. All rights reserved.
+  </p>
+</footer>
+
+</html>
