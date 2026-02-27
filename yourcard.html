@@ -19,6 +19,7 @@
   <div class="your-card">
     <div class="card">
     <h1 id="travelerName"></h1>
+    <img id="elementImg" src="" alt="element GIF" class="elementgif">
     <h2>
     <a href="https://genshin.hoyoverse.com/en/news" target="_blank" class="news"> Stay updated on Genshin's news/announcements!</a>
     </h2>
@@ -31,5 +32,44 @@
 const travelerName = localStorage.getItem("travelerName");
 
   document.getElementById("travelerName").textContent =
-    travelerName ? `Welcome back, ${travelerName}!`: travelerName;
-</script>
+  travelerName ? `Welcome back, ${travelerName}!`: travelerName;
+  const selectedElement = localStorage.getItem("element");
+  const elementImages = {
+    "Anemo": "assets/anemo.JPG",
+    "Geo": "assets/geo.JPG",
+    "Electro": "assets/electro.JPG",
+    "Dendro": "assets/dendro.JPG",
+    "Hydro": "assets/hydro.JPG",
+    "Pyro": "assets/pyro.JPG",
+    "Cryo": "assets/cryo.JPG"
+  };
+
+  if (selectedElement && elementImages[selectedElement]) {
+    document.getElementById("elementImg").src = elementImages[selectedElement];
+  }
+
+</script> 
+
+<footer class="footer">
+  <h2 class="footer-title">
+    Exploring Teyvat: A Guide to Genshin's Archons, Elements, Four shades, and Regions
+  </h2>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/1Aa8Hn7fas/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="social-link facebook">
+      <img src="assets/fb-removebg-preview.png" alt="Facebook Icon">
+    </a>
+    <a href="https://x.com/genshinimpact?s=21" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link x">
+      <img src="assets/x-removebg-preview.png" alt="X Icon">
+    </a>
+    <a href="https://www.instagram.com/genshinimpact?igsh=MXdraXJjY3g2cGFxdw==" target="_blank" rel="noopener" aria-label="Instagram" class="social-link instagram">
+      <img src="assets/ig-removebg-preview.png" alt="Instagram Icon">
+    </a>
+  </div>
+  <p class="footer-text genshin-link">
+    Visit the official Website <a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact website</a>
+  </p>
+  <p class="footer-text copyright">
+    © 2025 Genshin Impact Vargas A.B & Regala R.G. of 9-Magnesium. All rights reserved.
+  </p>
+</footer>
+

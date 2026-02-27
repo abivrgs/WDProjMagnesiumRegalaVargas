@@ -79,7 +79,8 @@
     nav a{
       position: relative;
       font-family: 'Genshin';
-      color: rgb(162, 58, 186);
+      text-decoration: none;
+      color: rgb(229, 112, 255);
       z-index: 4;
       margin: 0 65px;
       text-shadow:
@@ -89,6 +90,18 @@
       animation: neon 2s infinite ease-in-out;
       transition: color 120ms ease, text-shadow 120ms ease, transform 120ms ease;
     }
+    
+        nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background: #e0e47b;
+        transition: width 0.4s ease;
+        transform-origin: right;
+      }
 
     nav a:hover{
       color: #e0e47b;
@@ -98,6 +111,12 @@
         0 0 80px rgba(39,99,203,0.6);
       filter: drop-shadow(0 0 10px rgba(39,99,203,0.5));
     }
+
+    nav a:hover::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
     .text {
       position: absolute;
       top: 50%;
@@ -1049,6 +1068,7 @@
 
 .news{
     text-decoration: none;
+    color: rgba(207, 37, 250, 0.774)
 }
 
 .news:hover{
@@ -1061,6 +1081,18 @@
   transition: color 120ms ease, text-shadow 120ms ease, transform 120ms ease;
 }
 
+.elementgif{
+  display:block;
+  margin: 0 auto;
+ width: 100px;
+ height: 100px;
+ animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+}
 
 
 
