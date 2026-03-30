@@ -106,3 +106,55 @@
 
 #### Page 8 (Traveler's Card)
 #### ![More websites to helppage](images/page8.png)
+
+## FINAL MODIFICATION PROPOSAL
+
+### Purpose
+The purpose of this modification is to allow users to not only submit their preferences for their Teyvat Explorer Profile but also edit or delete the saved information. This ensures the website fully implements CRUD functionality: Create, Read, Update, Delete.
+
+### How It Will Be Used
+- Users submit their information on the Playstyle Page (Page 6).
+- The submitted information is saved to localStorage.
+- On the Traveler's Card Page (Page 8):
+  - Users can view their saved data.
+  - Users can update their saved info if they made mistakes or changed preferences.
+  - Users can delete their saved data to start fresh.
+
+This makes the website more interactive and ensures that data management is fully functional.
+
+### VI. Page 6. - Playstyle
+#### This page talks about the playstyle of the game, while also asking some information (from the game) from the user. 
+- Add Edit and Delete buttons next to the form or below it.
+- (Maybe) add pre-filled form if localStorage already has data (for updating).
+- Implementation
+    - When the user submits, save info in localStorage as usual If localStorage already has data:
+        - Fill the form fields with that data (Update mode)
+    - Update button:
+        - Overwrites the existing data in localStorage with new values.
+    - Delete button:
+        - Deletes the saved profile card data from localStorage.
+        - Permanent until the user submits new data.
+        - Clears the stored user info entirely, so other pages (like Traveler’s Card) will no longer show it.
+    - Reset button:
+        - Clears the current form fields only.
+        - Temporary; it does not affect data stored in localStorage.
+        - If the user has already submitted data and it’s saved, clicking “Reset” just empties the fields—they can type again, but the saved profile still exists.
+
+
+### VII. Page 8 - Traveler's Card
+#### This page shows a themed card/profile of the user/traveler from the data collected from page 6. This isn't that improtant, it really just adds more design and pop to our website while also showing the user's cool and diverse theme from their choices.
+- Add Edit and Delete options here too, or a link that redirects back to the Playstyle page for editing.
+- Show dynamic content based on what is in localStorage.
+- If data is deleted, show a “No profile found” message or redirect to Page 6.
+- Implementation:
+    - Use JavaScript to populate the card dynamically from localStorage.
+    - The Edit button redirects to Page 6, with the form pre-filled.
+    - The Delete button clears localStorage and reloads the page.
+
+### Wireframes:
+#### Page 6 (Playstyle)
+#### ![Playstyle page (updated)](images/page6_updated.png)
+
+#### Page 8 (Traveler's card)
+#### ![Playstyle page (updated)](images/page8_updated.png)
+
