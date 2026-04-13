@@ -872,8 +872,23 @@
         transform: scale(1.05);
       }
 
+      .update-btn {
+        background: #5c6bc0;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .update-btn:hover {
+        background: #7986cb;
+        transform: scale(1.05);
+      }
+
       .reset-btn {
-        background: #9e9e9e;
+        background: #5c6bc0;
         color: white;
         padding: 10px 25px;
         border-radius: 25px;
@@ -883,7 +898,22 @@
       }
 
       .reset-btn:hover {
-        background: #bdbdbd;
+        background: #7986cb;
+        transform: scale(1.05);
+      }
+
+      .delete-btn {
+        background: #c24242;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .delete-btn:hover {
+        background: #d35050;
         transform: scale(1.05);
       }
 
@@ -1094,5 +1124,18 @@
   50%  { transform: translateY(-20px); }
 }
 
+.edit-btn {
+  background: #5c6bc0;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
+.edit-btn:hover {
+  background: #7986cb;
+  transform: scale(1.05);
+}
 
