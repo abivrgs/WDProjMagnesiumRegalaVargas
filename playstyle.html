@@ -65,10 +65,9 @@
       </select>
 
       <div class="playstyle-buttons">
-        <button type="submit" class="submit-btn">Submit Profile</button>
-        <button type="update" class="update-btn">Update Profile</button>
+        <button type="submit" class="submit-btn">Submit / Update Profile</button>
         <button type="reset" class="reset-btn">Reset All</button>
-        <button type="delete" class="delete-btn">Delete Profile</button>
+        <button type="button" id="deletebtn" class="delete-btn">Delete Profile</button>
       </div>
 
     </form>
@@ -155,6 +154,15 @@ form.addEventListener("reset", function(){
   resultBox.style.display = "none";
   resultBox.classList.remove("submitted");
 });
+
+const deleteBtn = document.getElementById("deletebtn");
+  deleteBtn.addEventListener("click", function(){
+  localStorage.clear();
+  resultBox.style.display = "none";
+  resultBox.classList.remove("submitted");
+  form.clear();
+});
+
 </script>
 
 </body>

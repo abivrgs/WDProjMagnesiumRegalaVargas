@@ -23,8 +23,10 @@
     <h2>
     <a href="https://genshin.hoyoverse.com/en/news" target="_blank" class="news"> Stay updated on Genshin's news/announcements!</a>
     <div class="playstyle-buttons">
-      <button type="edit" class="edit-btn">Edit Profile</button>
-      <button type="delete" class="delete-btn">Delete Profile</button>
+      <a href="playstyle.html">
+        <button type="edit" class="edit-btn">Edit Profile</button>
+      </a>
+      <button type="button" class="delete-btn" id="deletebtn">Delete Profile</button>
      </div>
     </h2>
     </div>
@@ -48,10 +50,17 @@ const travelerName = localStorage.getItem("travelerName");
     "Cryo": "assets/cryo.JPG"
   };
 
+
   if (selectedElement && elementImages[selectedElement]) {
     document.getElementById("elementImg").src = elementImages[selectedElement];
   }
-
+const deleteBtn = document.getElementById("deletebtn");
+  deleteBtn.addEventListener("click", function(){
+  location.reload();
+  localStorage.clear();
+  resultBox.style.display = "none";
+  resultBox.classList.remove("submitted");
+});
 </script> 
 
 <footer class="footer">
